@@ -1,0 +1,2 @@
+DB_CONNECT = mongodb+srv://zhichengchen:123456.czc@cluster0-8gdhl.mongodb.net/test?retryWrites=true&w=majority
+TOKEN_SECRET = aergaevaregvergera;
