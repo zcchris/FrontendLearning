@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: antiquewhite;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  text-align: center;
+  font-size: 1.2rem;
+  /* margin: 0.4rem; */
+  color: rgb(134, 127, 111);
+}
+
+.todo-input-container input {
+  padding: 0.5rem;
+  border: none;
+  font-size: 1.5rem;
+  box-shadow: dimgray;
+  margin: 1rem;
+}
+
+.todo-section {
+  padding: 1rem;
+  border: none;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoItemDiv {
+  display: flex;
+  padding: 0.1rem;
+}
+
+.todoItemText {
+  background-color: white;
+  padding: 0.6rem;
+  padding-left: 20px;
+  /* margin: 0.5rem; */
+  min-width: 90%;
+  color: rgb(134, 127, 111);
+}
+
+.rmBtn {
+  background-color: rgb(194, 146, 100);
+  color: white;
+  border: none;
+  padding: 1rem;
+  transition: all 0.4s ease;
+}
+
+.rmBtn:hover {
+  background-color: white;
+  color: rgb(194, 146, 100);
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todoList-row {
+  margin: 0.3rem;
+  display: flex;
+}
+
+.todo-item {
+  background-color: white;
+  /* padding: 0.8rem;
+  padding-left: 0.6rem; */
+  width: 100%;
+  display: flex;
+  padding: 0.3rem;
+}
+
+.todo-item-input {
+  font-size: 1rem;
+  border: none;
+  padding-left: 0.7rem;
+  height: 100%;
+  width: 100%;
+}
+
+.todo-item-input:focus {
+  outline-width: 0;
+}
+
+.todo-item-edit-input {
+  font-size: 1rem;
+  border: none;
+  padding-left: 0.7rem;
+  height: 100%;
+  width: 100%;
+}
+
+.todo-item-edit-input:focus {
+  outline-width: 0;
+}
+
+.flex-grow {
+  width: 90%;
+}
+
+.btn-edit,
+.btn-remove,
+.btn-save {
+  color: rgb(243, 243, 242);
+  padding: 0.3rem;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.5 ease;
+}
+
+.btn-save {
+  background-color: rgb(139, 184, 113);
+}
+
+.btn-edit {
+  background-color: rgb(184, 165, 113);
+}
+
+.btn-remove {
+  background-color: rgb(194, 146, 100);
+}
+
+.btn-edit:hover {
+  background-color: rgb(243, 243, 242);
+  color: rgb(194, 146, 100);
+}
+
+.btn-remove:hover {
+  background-color: rgb(243, 243, 242);
+  color: rgb(194, 146, 100);
+}
+
+/* .input.middle:focus {
+  outline-width: 0;
+} */

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #banner-message {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="continue"></button>
+    <button class="continue"></button>
+    <br />
+    <p id="banner-message">hidden message</p>
+    <div id="text-container">
+      <button>Hide</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      class MyQuery {
+        constructor(selector) {
+          // document and window is a single element
+          if (selector === document || selector === window) {
+            this.eles = [selector];
+          } else {
+            this.eles = document.querySelectorAll(selector);
+          }
+        }
+        html(newHTML) {
+          // this.ele.innerHTML = newHTML;
+          this.eles.forEach((e) => {
+            e.innerHTML = newHTML;
+          });
+          return this; // have ability to do chaining
+        }
+        on(action, callback) {
+          // console.log(this.sel.);
+          this.eles.forEach((e) => {
+            e.addEventListener(action, callback);
+          });
+          return this; // have ability to do chaining
+        }
+
+        show() {
+          this.eles.forEach((e) => {
+            e.style.display = "initial"; // back to the default value
+          });
+          return this; // have ability to do chaining
+        }
+      }
+      var $$ = function (selector) {
+        return new MyQuery(selector);
+      };
+
+      $$.ajax = function (url, callback) {};
+
+      $$("button.continue").html("Next step...");
+
+      var hiddenBox = $$("#banner-message");
+      console.log(hiddenBox);
+      $$("#text-container button").on("click", function (event) {
+        hiddenBox.show();
+      });
+
+      $$.ajax("https://jsonplaceholder.typicode.com/posts", success);
+    </script>
+  </body>
+</html>
