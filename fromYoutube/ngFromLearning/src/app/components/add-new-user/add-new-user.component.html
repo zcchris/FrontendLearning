@@ -1,0 +1,180 @@
+<div class="addUserContainer">
+  <header><h1>Add New User</h1></header>
+
+  <div class="signup-form">
+    <form [formGroup]="userForm">
+      <h2>Sign Up</h2>
+      <p>Please fill in this form to create an account!</p>
+      <hr />
+      <div class="form-group">
+        <div class="row">
+          <div class="col-lg-4">
+            <label>ID</label>
+            <input
+              type="number"
+              formControlName="id"
+              class="form-control"
+              placeholder="ID"
+              required="required"
+            />
+          </div>
+          <div class="col-lg-8">
+            <label>Name</label>
+            <input
+              type="text"
+              formControlName="name"
+              class="form-control"
+              placeholder="Name"
+              required="required"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>User Name:</label>
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control"
+          placeholder="User Name"
+          required="required"
+        />
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="Email"
+          required="required"
+        />
+      </div>
+      <div formGroupName="addressGroup">
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label>Street:</label>
+              <input
+                type="address"
+                formControlName="street"
+                class="form-control"
+                placeholder="Street"
+                required="required"
+              />
+            </div>
+            <div class="col">
+              <label>Suite:</label>
+              <input
+                type="address"
+                formControlName="suite"
+                class="form-control"
+                placeholder="Suite"
+                required="required"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label>City:</label>
+              <input
+                type="address"
+                formControlName="city"
+                class="form-control"
+                placeholder="City"
+                required="required"
+              />
+            </div>
+            <div class="col">
+              <label>Zip Code:</label>
+              <input
+                type="number"
+                formControlName="zipcode"
+                class="form-control"
+                placeholder="Zip Code"
+                required="required"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Phone#:</label>
+        <input
+          type="tel"
+          formControlName="phone"
+          class="form-control"
+          placeholder="Phone#"
+          required="required"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Website:</label>
+        <input
+          type="url"
+          formControlName="website"
+          class="form-control"
+          placeholder="url"
+          required="required"
+        />
+      </div>
+      <div formGroupName="companyGroup">
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label>Company name:</label>
+              <input
+                type="text"
+                formControlName="name"
+                class="form-control"
+                placeholder="Compnay name"
+                required="required"
+              />
+            </div>
+            <div class="col">
+              <label>bs:</label>
+              <input
+                type="text"
+                formControlName="bs"
+                class="form-control"
+                placeholder="bs"
+                required="required"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Company Catch Phrase:</label>
+          <input
+            type="text"
+            formControlName="catchphrase"
+            class="form-control"
+            placeholder="Company catch phrase"
+            required="required"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="checkbox-inline"
+          ><input type="checkbox" required="required" /> I accept the
+          <a href="#">Terms of Use</a> &amp;
+          <a href="#">Privacy Policy</a></label
+        >
+      </div>
+      <div class="form-group submit-group">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg submitBtn"
+          (click)="addNewUser()"
+        >
+          Sign Up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

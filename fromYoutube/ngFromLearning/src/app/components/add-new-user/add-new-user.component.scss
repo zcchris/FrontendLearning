@@ -1,0 +1,22 @@
+.addUserContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  header {
+    font-size: 4rem;
+  }
+
+  h2,
+  p {
+    text-align: center;
+  }
+
+  .submit-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
