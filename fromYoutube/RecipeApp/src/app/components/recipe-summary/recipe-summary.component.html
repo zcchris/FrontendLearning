@@ -1,0 +1,29 @@
+<div class="recipe card" (click)="userClickedOnRecipe()">
+  <header>
+    <h5 class="card-header">{{ recipe.title }}</h5>
+  </header>
+
+  <div class="card-body container">
+    <div class="card-item row">
+      <div class="paragraph col">
+        <p>{{ recipe.description }}</p>
+      </div>
+
+      <div class="cover-photo-holder col">
+        <img
+          src="{{
+            this.recipe.cover_photo
+              ? this.recipe.cover_photo
+              : '/assets/default.jpg'
+          }}"
+        />
+      </div>
+    </div>
+
+    <div class="card-item">
+      <div><span>Preparation time: </span>{{ recipe.preparation_time }}</div>
+      <div><span>Feeds this many: </span>{{ recipe.feeds_this_many }}</div>
+    </div>
+  </div>
+  <!-- <div (click)="fileZoomInEvent()">zoom</div> -->
+</div>

@@ -1,0 +1,22 @@
+.card {
+  width: 450px;
+  margin: 10px;
+  float: left;
+  cursor: pointer;
+}
+.card-body {
+  display: inline-block;
+  padding: 0.8rem;
+}
+
+.paragraph {
+  font-size: 0.9rem;
+}
+
+.cover-photo-holder img {
+  width: 100%; /*fit the img in its parent's size*/
+}
+
+.card-header {
+  font-size: 1.5rem;
+}

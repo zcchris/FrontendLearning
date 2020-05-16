@@ -1,0 +1,8 @@
+@import './variables';
+@import './header';
+
+.contact {
+  @extend header;
+  background-color: rgb(226, 104, 196);
+  flex-direction: row;
+}

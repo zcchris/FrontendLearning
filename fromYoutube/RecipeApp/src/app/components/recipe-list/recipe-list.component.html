@@ -1,0 +1,24 @@
+<div>
+  <input
+    type="button"
+    class="addNewRecipeBtn"
+    value="Add New Recipe"
+    (click)="addNewRecipeClicked()"
+  />
+</div>
+<h1>This is my Angular App!</h1>
+
+<p *ngIf="!recipes_loaded && !load_error">
+  Recipes are loading, please wait for a second.
+</p>
+
+<p *ngIf="load_error" style="color: red;">
+  There was a problem loading the recipe list from the server:
+  {{ load_error.error }}.
+</p>
+
+<app-recipe-summary
+  *ngFor="let recipe of recipes"
+  [recipe]="recipe"
+  (recipeClicked)="recipeClicked($event)"
+></app-recipe-summary>

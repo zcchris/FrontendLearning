@@ -1,0 +1,17 @@
+.newrecipe {
+  width: 100%;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.recipe-input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+}

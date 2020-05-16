@@ -1,0 +1,114 @@
+<!---- Below is the input form ---->
+<div class="newrecipe card">
+  <h4 class="card-header">Add New Recipe</h4>
+
+  <form #recipeForm="ngForm">
+    <div class="card-body">
+      <div>
+        <input
+          required
+          type="text"
+          [(ngModel)]="recipe_in_progress.title"
+          placeholder="Recipe Title"
+          name="title"
+          class="recipe-input"
+        />
+      </div>
+      <div>
+        <textarea
+          required
+          name="description"
+          [(ngModel)]="recipe_in_progress.description"
+          placeholder="Description"
+          rows="5"
+          class="text-area"
+        ></textarea>
+      </div>
+      <div>
+        <input
+          required
+          type="number"
+          min="1"
+          [(ngModel)]="recipe_in_progress.preparation_time"
+          placeholder="Preparation Time"
+          name="preparation_time"
+        />
+        minutes
+      </div>
+      <div>
+        <input
+          required
+          type="number"
+          min="1"
+          max="1000"
+          [(ngModel)]="recipe_in_progress.feeds_this_many"
+          placeholder="Feeds this many"
+          name="feeds_this_many"
+        />
+        people
+      </div>
+
+      <label>Ingredient</label>
+      <div
+        *ngFor="let ingredient of recipe_in_progress.ingredients; let i = index"
+      >
+        <input
+          required
+          type="text"
+          [(ngModel)]="ingredient.ingredient"
+          placeholder="Ingredient"
+        />
+        <input
+          type="text"
+          [(ngModel)]="ingredient.measure"
+          placeholder="Measure"
+        />
+        <a (click)="removeIngredientAtIndex(i)">Remove</a>
+      </div>
+
+      <div>
+        <input
+          required
+          type="button"
+          value="Add Ingredients"
+          (click)="addIngredientPressed()"
+        />
+      </div>
+
+      <label>Instruction</label>
+      <div
+        *ngFor="
+          let instruction of recipe_in_progress.instructions;
+          let i = index
+        "
+      >
+        <input
+          required
+          type="text"
+          [(ngModel)]="instruction.instruction"
+          placeholder="Instruction"
+        />
+
+        <a (click)="removeInstructionAtIndex(i)">Remove</a>
+      </div>
+
+      <div>
+        <input
+          type="button"
+          value="Add Instructions"
+          (click)="addInstructionPressed()"
+        />
+      </div>
+      <div>
+        <input
+          type="button"
+          [disabled]="!recipeForm.valid"
+          [disabled]="disable_add_recipe_btn"
+          value="Add Recipe"
+          (click)="addRecipeClicked()"
+        />
+        <!-- <input type="button" value="Add Recipe" /> -->
+      </div>
+    </div>
+  </form>
+</div>

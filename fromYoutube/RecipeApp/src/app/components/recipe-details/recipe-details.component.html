@@ -1,0 +1,68 @@
+<p><a (click)="gobackButtonClick()" style="cursor: pointer;">Go Back</a></p>
+
+<p *ngIf="!recipe_loaded && !load_error">Recipe is loading...</p>
+
+<p *ngIf="load_error">
+  There was a problem loading your recipe:
+  {{ load_error.error }}
+</p>
+
+<div class="recipe card" *ngIf="recipe_loaded">
+  <header>
+    <h5 class="card-header">{{ recipe.title }}</h5>
+  </header>
+
+  <div class="card-body container">
+    <div class="card-item row">
+      <div class="paragraph col">
+        <p>{{ recipe.description }}</p>
+      </div>
+
+      <div class="cover-photo-holder col">
+        <img
+          src="{{
+            this.recipe.cover_photo
+              ? this.recipe.cover_photo
+              : '/assets/default.jpg'
+          }}"
+        />
+      </div>
+    </div>
+
+    <div class="card-item row">
+      <div class="numtext">
+        <span>Preparation time: </span>{{ recipe.preparation_time }}
+      </div>
+      <div class="numtext">
+        <span>Feeds this many: </span>{{ recipe.feeds_this_many }}
+      </div>
+    </div>
+
+    <div class="ingredients">
+      <h5>Ingredients:</h5>
+      <ul>
+        <div class="ingredient" *ngFor="let ingredient of recipe.ingredients">
+          <li>
+            {{ ingredient.ingredient }} - (
+            <span>Measure:{{ ingredient.measure }}</span> )
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <div class="instructions">
+      <h5>Instruction:</h5>
+      <ul>
+        <div
+          class="instruction"
+          *ngFor="let instruction of recipe.instructions"
+        >
+          <li>
+            {{ instruction.instruction }}
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <!-- <div (click)="fileZoomInEvent()">zoom</div> -->
+</div>

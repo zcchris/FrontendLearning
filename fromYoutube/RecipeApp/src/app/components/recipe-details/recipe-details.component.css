@@ -1,0 +1,41 @@
+.card {
+  width: 100%;
+  margin: 10px;
+}
+
+.card-header {
+  font-size: 1.5rem;
+}
+
+.card-body {
+  display: inline-block;
+  padding: 0.8rem;
+}
+
+.paragraph {
+  font-size: 0.9rem;
+}
+
+.cover-photo-holder img {
+  width: 50%; /*fit the img in its parent's size*/
+  float: right;
+}
+
+.card-item {
+  margin-top: 20px;
+  float: right;
+}
+
+.card-item .numtext {
+  padding-left: 2rem;
+}
+.ingredients h5,
+.instructions h5,
+.ingredients,
+.instructions {
+  font-size: 0.9rem;
+}
+
+.ingredients span {
+  color: gray;
+}
