@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a::after {
+  color: rgb(253, 199, 208);
+}
+
+.nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 7px;
+}
