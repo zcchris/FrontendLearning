@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-container {
+  width: 100%;
+  div {
+    width: 80vw;
+    text-align: center;
+  }
+
+  button {
+    font-size: 0.9rem;
+    color: white;
+    background-color: darkslategrey;
+    border-color: darkslategrey;
+    padding: 8px;
+    &:hover {
+      color: black;
+      background-color: lightgray;
+    }
+  }
+}
+
+.postBtn button {
+  font-size: 1rem;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  margin: 30px;
+  border-color: black;
+  &:hover {
+    color: black;
+    background-color: white;
+  }
+}

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="postBtn">
+    <button (click)="getPosts()">Get Posts</button>
+    <button (click)="clearPost()">Clear Posts</button>
+  </div>
+</div>
+<div class="container table-container" *ngIf="getPostsIsClicked">
+  <mat-spinner *ngIf="!isLoaded"></mat-spinner>
+  <div *ngIf="isLoaded">
+    <table>
+      <tr>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Comment</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.userId }}</td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.title }}</td>
+        <td>{{ user.body }}</td>
+        <td>
+          <button (click)="fetchComment(user)">
+            comment
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

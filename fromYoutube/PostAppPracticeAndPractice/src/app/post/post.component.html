@@ -1,0 +1,25 @@
+<div class="spinner" *ngIf="!isLoaded">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div class="container" *ngIf="isLoaded">
+  <div>
+    <h1>Comment details</h1>
+  </div>
+
+  <div>
+    <table>
+      <!-- res[i].name, res[i].email, res[i].body -->
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Body</th>
+      </tr>
+      <tr *ngFor="let comment of comments">
+        <td>{{ comment.name }}</td>
+        <td>{{ comment.email }}</td>
+        <td>{{ comment.body }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

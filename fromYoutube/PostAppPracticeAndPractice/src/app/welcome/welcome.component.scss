@@ -1,0 +1,20 @@
+.wel-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.wel-container h1 {
+  color: white;
+  padding: 15px 30px;
+}
+
+.wel-btn {
+  font-size: 0.9rem;
+  color: white;
+  background-color: black;
+  padding: 20px;
+}
