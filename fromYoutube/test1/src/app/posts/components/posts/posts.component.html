@@ -1,0 +1,31 @@
+<div class="posts-container">
+  <header class="posts-header-list">
+    <h1 class="posts-header-list__item">Posts</h1>
+    <button class="posts-header-list__item" (click)="getPosts()">
+      Get Posts
+    </button>
+  </header>
+  <div class="posts-section">
+    <form [formGroup]="formGroup">
+      <input type="text" class="posts-input_item" formControlName="input" />
+      <button class="posts-input_item" (click)="searchFunc()">
+        Search
+      </button>
+    </form>
+  </div>
+  <div class="posts-section" *ngIf="posts">
+    <table class="posts-section__item posts-table">
+      <tr>
+        <td>Id</td>
+        <td>Body</td>
+      </tr>
+      <tr *ngFor="let item of posts">
+        <td>{{ item.id }}</td>
+        <td>{{ item.body }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="posts-section" *ngIf="!posts">
+    <p class="posts-section__item">Empty...</p>
+  </div>
+</div>

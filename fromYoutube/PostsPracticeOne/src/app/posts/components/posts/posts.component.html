@@ -1,0 +1,22 @@
+<section class="section">
+  <header class="section-header">
+    <div class="section-header-list">
+      <div class="section-header-list__item">
+        <button class="btn" (click)="getPosts()">Button</button>
+      </div>
+    </div>
+  </header>
+  <!-- <h1>{{ posts }}</h1> -->
+  <div class="section-content">
+    <table class="posts-table">
+      <tr>
+        <td appMyD>Column1</td>
+        <td>Column2</td>
+      </tr>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.body | myuppercase }}</td>
+      </tr>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<div class="post-container">
+  <div><h1>POSTS</h1></div>
+  <div>
+    <button (click)="fetchPosts()">Pull posts</button>
+  </div>
+</div>
+<div class="table" *ngIf="posts.length">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+    <tr *ngFor="let post of posts">
+      <td>
+        {{ post.id }}
+      </td>
+      <td>
+        {{ post.title }}
+      </td>
+      <td>
+        {{ post.body }}
+      </td>
+    </tr>
+  </table>
+</div>

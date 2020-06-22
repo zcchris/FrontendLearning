@@ -1,0 +1,146 @@
+<div class="container">
+  <h1>Data Binding</h1>
+
+  <div>
+    <p class="nokeKey">[1]Data1: {{ data1 }}</p>
+  </div>
+  <div>
+    <p class="nokeKey">[2]ReturnString: {{ returnString() }}</p>
+  </div>
+  <div>
+    <p class="nokeKey">
+      [3]Bind button disabled state to `btnDisabled` property
+      <span><button [disabled]="btnDisabled">Save</button></span>
+    </p>
+  </div>
+
+  <div>
+    <p class="nokeKey">[4]Pass and use data with event binding</p>
+    <input type="text" (input)="updateInput($event)" />
+    <input type="text" (keypress)="submitInput($event)" />
+    <p>input value after submitted: {{ inputActionValue }}</p>
+    <p>input value: {{ inputValue }}</p>
+  </div>
+
+  <div>
+    <p class="nokeKey">
+      [5]Two way binding
+      <em>IMPORTANT: import FormsModule in app.module.ts file</em>
+    </p>
+    <input type="text" [(ngModel)]="inputValue" />
+    <p>Two way binding: {{ inputValue }}</p>
+  </div>
+
+  <div>
+    <p class="nokeKey">
+      [6]Binding with FormGroup and FormControl
+      <em>IMPORTANT: import ReactiveFormsModule in app.module.ts file</em>
+    </p>
+  </div>
+  <div>
+    <form [formGroup]="bindForm">
+      <div>
+        <label>Email</label>
+        <div>
+          <label *ngIf="formIsTouched && !emailIsValid">(Invalid email)</label>
+        </div>
+        <input type="email" formControlName="email" required />
+      </div>
+
+      <div>
+        <div><label>Password</label></div>
+        <div>
+          <label *ngIf="formIsTouched && !pwdIsValid">(Invalid password)</label>
+        </div>
+        <input type="password" formControlName="password" required />
+      </div>
+
+      <button (click)="retriveFormValue()">Show FormGroup Value</button>
+      <p>JSON.stringify: {{ retrievedFormValue }}</p>
+    </form>
+  </div>
+  <div>
+    <h1>Pipe</h1>
+    <div>
+      <p class="nokeKey">[7]Custom pipe</p>
+    </div>
+    <div>
+      <p>My pipe {{ myPipeStr | myPipe }}</p>
+      <p>
+        Pipe with parameters:
+        {{ myPipeStr | pipeWithParams: "--Before--":"--After--" }}
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <h1>Directive</h1>
+    <p class="nokeKey">[8]Custom directive</p>
+    <div><p appMyDirective1>Directive</p></div>
+    <div appMyDirective2>Appended text:(inserted words👉)</div>
+    <div>
+      <p
+        appShadowColor="directiveParam1"
+        appShadowX="directiveParam2"
+        appShadowY="directiveParam3"
+        appShadowBlur="directiveParam4"
+      >
+        Shadow Drective
+      </p>
+    </div>
+    <div>
+      <div *ngIf="condiction">这个为什么没显示</div>
+      <div *myCustomIf="condiction">这个为什么没显示</div>
+      <p>condiction directive: {{ condiction }}</p>
+      <button (click)="changeCondiction()">Change Condiction</button>
+    </div>
+  </div>
+
+  <div>
+    <h1>ng-content</h1>
+    <p class="nokeKey">[9]ng-content example</p>
+    <ngContentTag>[+]:Element inside the ng-content</ngContentTag>
+  </div>
+
+  <div>
+    <h1>Custom Popup window</h1>
+    <p class="nodeKey">[10]My custom popup window</p>
+    <button (click)="openPopup()">Open</button>
+    <popup-window #modalRef>what is this</popup-window>
+  </div>
+
+  <div>
+    <h1>Lazy-loading</h1>
+    <p>[11]Lazy loading</p>
+    <button [routerLink]="['/lazy']" routerLinkActive="router-link-active">
+      Open lazy component
+    </button>
+  </div>
+
+  <div>
+    <h1>@ViewChild & @ViewChildren</h1>
+    <p>[12]Use ViewChild to access child component</p>
+    <child-app age="{{ age }}"></child-app>
+    <span>(2): </span>
+    <h5>#header4 insert 👉 <span #header4></span></h5>
+  </div>
+
+  <div>
+    <h1>@Input() - @Output()</h1>
+    <p>[13]User @Input() transfer data from parent to child</p>
+    <app-child-one
+      [childValueNum]="valueToChildComponent"
+      (childEmitter)="childEmitterDisplay($event)"
+    ></app-child-one>
+    <p>value from child component: {{ outputValue }}</p>
+  </div>
+
+  <div>
+    <h1>Timer</h1>
+    <p>[14]my timer: {{ timerCounter }}</p>
+  </div>
+
+  <div>
+    <footer class="footer"></footer>
+  </div>
+</div>

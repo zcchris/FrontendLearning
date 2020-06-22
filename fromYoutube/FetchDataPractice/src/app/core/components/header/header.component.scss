@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: rgb(158, 68, 123);
+  .nav-list {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    &__item {
+      padding: 30px;
+      color: white;
+    }
+  }
+}

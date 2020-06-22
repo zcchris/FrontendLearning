@@ -1,0 +1,26 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.posts-container {
+  width: 100%;
+  padding-top: 30px;
+  flex-direction: column;
+  @include center();
+  .posts-item {
+    margin-top: 20px;
+
+    .posts-btn {
+      padding: 5px;
+      font-size: 1.2rem;
+      border: none;
+      color: white;
+      background-color: gray;
+    }
+  }
+
+  .posts-list {
+    width: 80%;
+  }
+}

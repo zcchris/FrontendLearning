@@ -1,0 +1,11 @@
+<div class="posts-container">
+  <header class="posts-item">
+    <h1>Posts Page</h1>
+  </header>
+  <div class="posts-item">
+    <button class="posts-btn" (click)="getPosts()">Get posts</button>
+  </div>
+  <div class="posts-item posts-list">
+    <app-data [posts]="posts"></app-data>
+  </div>
+</div>
