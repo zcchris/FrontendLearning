@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.card {
+  position: relative;
+  width: 40%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  border: 1px solid white;
+}
+
+.card::before {
+  top: 1.5rem;
+  bottom: 0.5rem;
+  right: 1rem;
+}
+
+.card::after {
+  bottom: 1rem;
+  left: 1.5rem;
+  right: 0.5rem;
+}
+
+.card__img {
+  /* absoblute here defines the height is 100% of its nearest parent element, 
+     parent's position needs relative */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* cover the space, like background */
+  object-fit: cover;
+  z-index: -1;
+}
+
+.card__body {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 3rem;
+}
+
+.card__title,
+.card__text {
+  margin: 0;
+}
+
+.card__title {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  color: black;
+}
+
+/* left part of the yellow title background */
+.card__title::before {
+  content: '';
+  position: absolute;
+  background: yellow;
+  /* calc doing to 100% which is the title and adding 5rem 
+     for compensating the 5rem you move to the left */
+  width: calc(100% + 5rem);
+  top: -0.1em;
+  bottom: -0.15em;
+  left: -5rem;
+  z-index: -1;
+  box-shadow: inset -15px 0 10px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* right part of the yellow title background  */
+.card__title::after {
+  content: '';
+  position: absolute;
+  top: -0.1em;
+  bottom: -0.15em;
+  left: calc(100% + 3rem);
+  width: 3rem;
+  background: yellow;
+  box-shadow: inset 12px 0 10px -10px rgba(0, 0, 0, 0.6);
+}
+
+.card__text {
+  text-align: right;
+}
