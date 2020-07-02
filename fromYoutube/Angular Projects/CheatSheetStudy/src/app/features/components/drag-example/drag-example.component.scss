@@ -1,0 +1,15 @@
+.drag-container {
+  height: 100%;
+  background-color: tomato;
+  position: relative;
+}
+
+.dragEle {
+  position: absolute;
+  background: white;
+  color: black;
+  text-align: center;
+  padding-top: 30px;
+  height: 100px;
+  width: 100px;
+}

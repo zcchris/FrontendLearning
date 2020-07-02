@@ -1,0 +1,71 @@
+<div class="db-container">
+  <div class="db-content">
+    <div class="db-item">
+      <p>
+        <strong>Property Binding: </strong>
+      </p>
+      <p>Binding property value of element with variable "firstName"</p>
+      <input type="text" [value]="propertyValue" />
+      <div [style.background-color]="propertyStyleBGColor">
+        <p>style property</p>
+      </div>
+    </div>
+    <hr />
+    <div class="db-item">
+      <p>
+        <strong>Event Binding: </strong>
+      </p>
+      <p>
+        Calls method when a click event is triggered on button element (or its
+        children) and passes in the event object.
+      </p>
+      <app-dialog></app-dialog>
+    </div>
+    <hr />
+    <div class="db-item">
+      <p>
+        <strong>Interpolation:</strong>
+      </p>
+      <p title="this is titile {{ interpolationValue1 }}">
+        [1] Hover over for a second and display the title.
+      </p>
+      <p [(title)]="title2">[2] Two-way binding to the element attribute</p>
+      <p>[3] {{ interpolationValue2 }}</p>
+    </div>
+    <hr />
+    <div class="db-item">
+      <p>
+        <strong>Two-way data bindings</strong>
+      </p>
+      <p>Sets up two-way data binding.</p>
+      <input type="text" [(ngModel)]="twoWayBindingValue" />
+
+      <p>Display the value: {{ twoWayBindingValue }}</p>
+    </div>
+    <hr />
+    <div class="db-item">
+      <p>
+        <strong>Template Reference variable</strong>
+      </p>
+
+      <input type="text" #refInputVar />
+      <button (click)="showRefInputvar(refInputVar)">show</button>
+      <p>Ref value via # symbol: {{ refInputVarValue | ifIsEmpty }}</p>
+      <p>
+        Ref value via ViewChild: {{ refInputVarThroughViewChild | ifIsEmpty }}
+      </p>
+    </div>
+    <hr />
+    <div class="db-item">
+      <p>
+        <strong>Save navigation operator: "?"</strong>
+      </p>
+      <p>
+        It means that the variable field is optional and if undefined, the rest
+        of the expression should be ignored.
+      </p>
+      <button (click)="createObj()">Create Object</button>
+      <p>Hero created: [name: {{ hero?.name }}, age: {{ hero?.age }}]</p>
+    </div>
+  </div>
+</div>
